@@ -2,10 +2,10 @@ use Mix.Config
 
 # Configure your database
 config :smalt, Smalt.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: System.get_env("DB_USER") || "postgres",
+  password: System.get_env("DB_PASS") || "postgres",
   database: "smalt_dev",
-  hostname: "localhost",
+  hostname: System.get_env("DB_HOST") || "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
@@ -16,7 +16,7 @@ config :smalt, Smalt.Repo,
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
 config :smalt_web, SmaltWeb.Endpoint,
-  http: [port: 4000],
+  http: [port: System.get_env("PORT") || 4000],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,

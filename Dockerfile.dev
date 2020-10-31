@@ -1,0 +1,11 @@
+FROM bitwalker/alpine-elixir-phoenix:latest
+
+EXPOSE 4000
+ENV PORT=4000
+
+ENV HEX_HTTP_TIMEOUT=120
+
+ADD . .
+RUN mix do deps.get, compile
+
+CMD ["mix", "phx.server"]
