@@ -5,8 +5,10 @@ defmodule SmaltWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", SmaltWeb do
+  scope "/api" do
     pipe_through :api
+
+    forward "/", Absinthe.Plug, schema: Graph.Schema
   end
 
   # Enables LiveDashboard only for development
@@ -22,6 +24,10 @@ defmodule SmaltWeb.Router do
     scope "/" do
       pipe_through [:fetch_session, :protect_from_forgery]
       live_dashboard "/dashboard", metrics: SmaltWeb.Telemetry
+    end
+
+    scope "/" do
+      forward "/graphiql", Absinthe.Plug.GraphiQL, schema: Graph.Schema
     end
   end
 end
