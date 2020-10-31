@@ -6,6 +6,7 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=smalt_dev
   api:
+    stdin_open: true
     depends_on:
       - db
     build:

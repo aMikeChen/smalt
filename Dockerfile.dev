@@ -8,4 +8,4 @@ ENV HEX_HTTP_TIMEOUT=120
 ADD . .
 RUN mix do deps.get, compile
 
-CMD ["mix", "phx.server"]
+CMD ["iex", "-S", "mix", "phx.server"]
