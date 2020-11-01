@@ -23,7 +23,7 @@ defmodule Client.MixProject do
 
   defp deps do
     [
-      {:plug, "~> 1.10"}
+      {:phoenix, "~> 1.5.4"}
     ]
   end
 end

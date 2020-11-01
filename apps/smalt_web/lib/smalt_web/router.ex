@@ -30,4 +30,6 @@ defmodule SmaltWeb.Router do
       forward "/graphiql", Absinthe.Plug.GraphiQL, schema: Graph.Schema
     end
   end
+
+  forward "/", Client.Router
 end
