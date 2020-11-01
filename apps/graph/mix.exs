@@ -11,6 +11,7 @@ defmodule Graph.MixProject do
       lockfile: "../../mix.lock",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
+      aliases: aliases(),
       deps: deps()
     ]
   end
@@ -28,6 +29,13 @@ defmodule Graph.MixProject do
       {:absinthe_relay, "~> 1.5"},
       {:dataloader, "~> 1.0"},
       {:absinthe_error_payload, "~> 1.1"}
+    ]
+  end
+
+  defp aliases do
+    [
+      setup: ["deps.get"],
+      test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"]
     ]
   end
 end

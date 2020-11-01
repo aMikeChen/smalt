@@ -11,6 +11,7 @@ defmodule Client.MixProject do
       lockfile: "../../mix.lock",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
+      aliases: aliases(),
       deps: deps()
     ]
   end
@@ -24,6 +25,12 @@ defmodule Client.MixProject do
   defp deps do
     [
       {:phoenix, "~> 1.5.4"}
+    ]
+  end
+
+  defp aliases do
+    [
+      setup: ["deps.get"]
     ]
   end
 end
