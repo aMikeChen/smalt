@@ -21,3 +21,6 @@ erl_crash.dump
 
 /apps/.DS_STORE
 .DS_STORE
+
+/.log/
+.ash_history

@@ -1,0 +1,16 @@
+schema {
+  query: RootQueryType
+}
+
+interface Node {
+  "The id of the object."
+  id: ID!
+}
+
+type RootQueryType {
+  node(
+    "The id of an object."
+    id: ID!
+  ): Node
+  ping: String
+}
