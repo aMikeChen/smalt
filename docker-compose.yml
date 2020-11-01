@@ -6,7 +6,6 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=smalt_dev
   api:
-    stdin_open: true
     depends_on:
       - db
     build:
@@ -15,8 +14,19 @@ services:
     volumes:
       - /opt/app/deps
       - /opt/app/_build
+      - /opt/app/apps/client
       - .:/opt/app
     environment:
       - DB_HOST=db
     ports:
       - '4000:4000'
+  client:
+    depends_on:
+      - api
+    build:
+      context: apps/client/ui
+    volumes:
+      - /opt/app/node_modules
+      - ./apps/client/ui:/opt/app
+    ports:
+      - '3000:3000'

@@ -32,6 +32,7 @@ defmodule SmaltWeb.MixProject do
     [
       {:smalt, in_umbrella: true},
       {:graph, in_umbrella: true},
+      {:client, in_umbrella: true},
       {:phoenix, "~> 1.5.4"},
       {:phoenix_ecto, "~> 4.0"},
       {:phoenix_live_dashboard, "~> 0.2"},

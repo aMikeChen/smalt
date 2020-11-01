@@ -1,9 +1,9 @@
-defmodule Graph.MixProject do
+defmodule Client.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :graph,
+      app: :client,
       version: "0.1.0",
       build_path: "../../_build",
       config_path: "../../config/config.exs",
@@ -23,11 +23,7 @@ defmodule Graph.MixProject do
 
   defp deps do
     [
-      {:smalt, in_umbrella: true},
-      {:absinthe, "~> 1.5"},
-      {:absinthe_relay, "~> 1.5"},
-      {:dataloader, "~> 1.0"},
-      {:absinthe_error_payload, "~> 1.1"}
+      {:plug, "~> 1.10"}
     ]
   end
 end

@@ -5,7 +5,13 @@ ENV PORT=4000
 
 ENV HEX_HTTP_TIMEOUT=120
 
-ADD . .
+COPY apps/client/mix.exs apps/client/mix.exs
+COPY apps/graph/mix.exs apps/graph/mix.exs
+COPY apps/smalt/mix.exs apps/smalt/mix.exs
+COPY apps/smalt_web/mix.exs apps/smalt_web/mix.exs
+COPY mix.exs mix.lock ./
 RUN mix do deps.get, compile
 
-CMD ["iex", "-S", "mix", "phx.server"]
+ADD . .
+
+CMD ["mix", "phx.server"]
