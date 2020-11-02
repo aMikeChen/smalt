@@ -10,10 +10,6 @@ defmodule SmaltWeb.Endpoint do
     signing_salt: "JteZiK9l"
   ]
 
-  socket "/socket", SmaltWeb.UserSocket,
-    websocket: true,
-    longpoll: false
-
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 
   plug Client.Static

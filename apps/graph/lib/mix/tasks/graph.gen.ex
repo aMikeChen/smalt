@@ -1,4 +1,6 @@
 defmodule Mix.Tasks.Graph.Gen do
+  @moduledoc false
+
   use Mix.Task
 
   @impl Mix.Task

@@ -1,4 +1,6 @@
 defmodule Client.Static do
+  @moduledoc false
+
   @behaviour Plug
 
   def init(_opts) do

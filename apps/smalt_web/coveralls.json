@@ -1,0 +1,14 @@
+{
+  "skip_files": [
+    "lib/smalt_web.ex",
+    "lib/smalt_web/application.ex",
+    "lib/smalt_web/endpoing.ex",
+    "lib/smalt_web/gettext.ex",
+    "lib/smalt_web/router.ex",
+    "lib/smalt_web/telemetry.ex",
+    "test/support"
+  ],
+  "coverage_options": {
+    "treat_no_relevant_lines_as_covered": true
+  }
+}
